@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  frontend:
+    build: .
+    ports:
+      - '80:80'
+    networks:
+      - my-network
+
+  backend:
+    build: ./app/.
+    ports:
+      - '5000:5000'
+    networks:
+      - my-network
+
+networks:
+  my-network:
